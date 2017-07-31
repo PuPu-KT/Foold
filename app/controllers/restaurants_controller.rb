@@ -73,7 +73,7 @@ def show
 
       def is_admin?
          if !current_user.try(:admin?)
-           flash[:danger] = "You are not authorized to edit or delete."
+           flash[:danger] = "Oops! Did you try to access a secret page?"
            redirect_to '/'
          end
       end
