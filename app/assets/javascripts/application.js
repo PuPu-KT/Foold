@@ -15,3 +15,4 @@
 //= require turbolinks
 //= require custom.js
 //= require_tree .
+//= require bootstrap

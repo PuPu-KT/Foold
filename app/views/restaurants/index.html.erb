@@ -1,42 +1,20 @@
 <div id="home-search-container">
   <div class="row">
-
-  <!--<div class="container">
-      <div class="row">
-          <div class="span12">
-              <div class="widget pull-right">
-                  <div class="row">
-                  	<div class="span12 head-container">
-                  		<div class="row">-->
-                          <div class="span8">
-                              <h1 class="head-title">Welcome to FOOLD </h2>
-                              <p class="head-message"><strong>Best restaurant reviews.</strong>
-                                <br />Everyone's a critic. </p>
-                              <%= link_to "Write a Review", new_restaurant_path,class: "btn btn-large btn-realto span3 header-cta" %>
-                          </div>
-                          <div class="span4" style="padding-bottom: 150px;">
-                              <div class="search-form">
-                                  <p>Find a great Restaurant !!</p>
-                                <!-- <%= form_tag search_restaurants_path, method: :get do |r| %> -->
-                                <!-- <%= text_field_tag :search, nil, placeholder:"Good food, Great Ambience, etc!" %>
-                                <%= text_field_tag :location, nil, placeholder:"East Coast, 848 Khatib, etc!" %> -->
-                                <%= select_tag :restaurants, options_for_select(@restaurants.all.map{ |r| [r.name, "/restaurants/"+r.id.to_s]}), class: "selectRest", onclick: "location = this.value;"%>
-                                <!-- <%= submit_tag 'Search', class: "btn span2 btn-realto-form btn-large" %> -->
-                                <!-- <% end %> -->
-                              </div>
-                              <!-- .search-form -->
-                          </div>
-                          <!-- .span4 -->
-                      </div>
-                  </div>
-                  </div>
-                  <!-- .row -->
-              </div>
-              <!-- .search-holder -->
-          </div>
-          <!-- .span12 -->
-      </div>
-      <!-- .row -->
+        <div class="span8">
+            <h1 class="head-title">Welcome to FOOLD </h2>
+            <p class="head-message"><strong>Best restaurant reviews.</strong>
+              <br />Everyone's a critic. </p>
+        </div>
+        <div class="span4" style="padding-bottom: 150px;">
+            <div class="search-form">
+                <p>Find a great Restaurant !!</p>
+                <!-- <%= form_tag search_restaurants_path, method: :get do |r| %> -->
+                <!-- <%= text_field_tag :search, nil, placeholder:"Good food, Great Ambience, etc!" %>
+                <%= text_field_tag :location, nil, placeholder:"East Coast, 848 Khatib, etc!" %> -->
+                <%= select_tag :restaurants, options_for_select(@restaurants.all.map{ |r| [r.name, "/restaurants/"+r.id.to_s]}), class: "selectRest", onclick: "location = this.value;"%>
+                <!-- <%= submit_tag 'Search', class: "btn span2 btn-realto-form btn-large" %> -->
+                <!-- <% end %> -->
+            </div>
+        </div>
   </div>
-  <!-- .container -->
 </div>

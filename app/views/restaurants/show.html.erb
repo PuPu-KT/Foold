@@ -1,32 +1,47 @@
 <!-- Show One Restaurant -->
-<p>
-  <%= @restaurant.name %>
-</p>
+<div id="restaurant_container">
+  <div class="container">
+    <div class="row">
+        <p>
+          <%= @restaurant.name %>
+        </p>
+        <p>
+          <%= image_tag(@restaurant.image) %>
+        </p>
+        <p>
+          <%= @restaurant.description %>
+        </p>
+        <p>
+          <%= @restaurant.address1 %>
+        </p>
+        <p>
+          <%= @restaurant.address2 %>
+        </p>
+        <p>
+          <%= @restaurant.city %>
+        </p>
+    </div>
+      <!-- Admin edit rights here -->
+      <div class="row">
+        <p>
+          <%if current_user.try(:admin?) %>
+          <%= link_to 'Edit', edit_restaurant_path(@restaurant) %> |
+          <%= link_to 'Back', restaurants_path %>
+          <%end%>
+        </p>
+      </div>
 
-<p>
-  <%= image_tag(@restaurant.image) %>
-</p>
+      <!-- Write a Review -->
+      <div class="row">
+        <div class="col-xs-12">
+          <%if user_signed_in? %>
+          <%= link_to "Write a Review", new_restaurant_path,class: "btn btn-large btn-realto header-cta" %>
+          <%else%>
+          <%= link_to "Sign in to Review", new_user_session_path %>
+          <%end%>
+        </div>
+      </div>
+  </div>
+</div>
 
-<p>
-  <%= @restaurant.description %>
-</p>
-
-<p>
-  <%= @restaurant.address1 %>
-</p>
-
-<p>
-  <%= @restaurant.address2 %>
-</p>
-
-<p>
-  <%= @restaurant.city %>
-</p>
-
-<%if !current_user.try(:admin?) %>
-<%= link_to 'Back', restaurants_path %>
-<%else%>
-<%= link_to 'Edit', edit_restaurant_path(@restaurant) %> |
-<%= link_to 'Back', restaurants_path %>
-<%end%>
-<!-- .container -->
+<!-- restaurant container end -->

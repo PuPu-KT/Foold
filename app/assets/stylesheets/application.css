@@ -15,10 +15,15 @@
  */
 
 @import url('https://fonts.googleapis.com/css?family=Pacifico');
+@import "bootstrap";
 
 .logo-text {
   font-family: 'Pacifico', cursive;
   font-size: 20px;
+}
+
+#restaurant_container {
+  margin-bottom: 10px;
 }
 
 /*h2 {
