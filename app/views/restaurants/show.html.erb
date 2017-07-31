@@ -1,0 +1,103 @@
+
+<div class="container page-content">
+    <div class="row">
+        <div class="span8">
+            <div class="box-container">
+                <div class="cycle-slideshow">
+
+                	<%= image_tag(@restaurant.image_url) %>
+
+                </div><!-- .cycle-slideshow -->
+                <div id="adv-custom-pager"></div>
+                <div class="clearfix">
+                    <div class="clearfix padding30">
+                        <h2 class="prop-title pull-left margin0"><%= @restaurant.name %>
+                           <% if current_user.try(:admin?) %>
+
+                        <small><%= link_to "Edit", edit_restaurant_path, class: "btn btn-primary btn-mini" %></small>
+                        <small><%= link_to "Delete", restaurant_path, method: :delete, data: {confirm: " Sure? You wanna delete?"}, class: "btn btn-danger btn-mini" %></small>
+                        </h2>
+                        <span class="prop-price pull-right serif italic star-rating" data-score=<%= @avg_rating %>></span>
+                        <!-- star-rating is right here! From http://wbotelhos.com/raty -->
+                    </div>
+                    <div class="clearfix padding030 row-fluid">
+                        <ul class="more-info pull-left span6">
+                            <li class="info-label clearfix"><span class="pull-left">Category:</span>
+                                <span class="qty pull-right"><%= @restaurant.category.name %></span></li>
+                            <li class="info-label clearfix"><span class="pull-left">Website:</span>
+                                <span class="qty pull-right">2</span></li>
+                            <li class="info-label clearfix"><span class="pull-left">Description:</span>
+                                <span class="qty pull-right"><%= @restaurant.description %></span></li>
+
+                        </ul>
+                        <ul class="more-info pull-right span6">
+                            <li class="info-label clearfix"><span class="pull-left">Phone:</span>
+                                <span class="qty pull-right"><%= @restaurant.phone %></span></li>
+                            <li class="info-label clearfix"><span class="pull-left">Email:</span>
+                                <span class="qty pull-right"><%= @restaurant.email %></span></li>
+                            <li class="info-label clearfix"><span class="pull-left">Address:</span>
+                                <span class="qty pull-right">
+                                  <%= @restaurant.address1 %><br />
+                                  <%= @restaurant.address2 %><br />
+                                  <%= @restaurant.city %><br />
+                                  <%= @restaurant.state %><br />
+                                  <%= @restaurant.zipcode %><br />
+                                </span>
+                              </li>
+                        </ul>
+                    </div>
+                    <div class="clearfix padding30">
+                    <%= link_to "Write a review", new_restaurant_review_path(@restaurant), class: "btn btn-small btn-realto" %>
+                        <h3>REVIEWS</h3>
+                        <% if @reviews.blank? %>
+                        <p>No reviews Yet!!!</p>
+                        <% else %>
+                         <table class="table">
+                           <thead>
+                              <tr>
+                                <th class="col-mid-3"</th>
+                                <th class="col-mid-9"</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                              <% @reviews.each do |review| %>
+                              <tr>
+                                 <td>
+                                   <h5><%= "#{review.user.first_name} #{review.user.last_name}" %></h5>
+                                 </td>
+                                 <td>
+                                   <div class="clearfix star-rating" data-score=<%= review.rating %>></div>
+                                   <%= review.comment %>
+                                </td>
+                              </tr>
+                              <% end %>
+                            </tbody>
+                          </table>
+                          <% end %>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- .span8 -->
+        <div class="span4">
+            <div class="widget map box-container padding30">
+                <h3 class="widget-title">Map &amp; Directions</h3>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d118586.59278790357!2d<%= @restaurant.longitude %>!3d<%= @restaurant.latitude %>!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2ssg!4v1501413891829" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+            </div>
+
+            <div class="search-form widget">
+              <p>Find a great Restaurant !!</p>
+                <%= form_tag search_restaurants_path, method: :get do |f| %>
+                <%= text_field_tag :search, nil, placeholder:"Good food, Great Ambience, etc!" %>
+                <%= text_field_tag :location, nil, placeholder:"East Coast, 848 Khatib, etc!" %>
+                <%= select_tag :category, options_for_select(Category.all.map{ |c| [c.name, c.id]}) %>
+                <%= submit_tag 'Search', class: "btn span2 btn-realto-form btn-large" %>
+                <% end %>
+            </div>
+            <!-- .search-form -->
+        </div>
+        <!-- .span4 -->
+    </div>
+    <!-- .row -->
+</div>
+<!-- .container -->

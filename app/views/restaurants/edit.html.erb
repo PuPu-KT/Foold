@@ -1,0 +1,51 @@
+<div class="container page-content">
+  <div class="row">
+      <div class="span8">
+          <div class="box-container">
+              <div class="padding30">
+                  <h2 class="page-title">Write a Review</h2>
+
+                  <%= form_for @restaurant do |f| %>
+                     <%= f.label :name %>
+                     <%= f.text_field :name %>
+                     <%= f.label :description %>
+                     <%= f.text_area :description %><br />
+                     <%= f.select :category_id, Category.all.map{ |f| [f.name, f.id] } %>
+                     <%= f.label :address1 %>
+                     <%= f.text_field :address1 %>
+                     <%= f.label :address2 %>
+                     <%= f.text_field :address2 %>
+                     <%= f.label :city %>
+                     <%= f.text_field :city %>
+                     <%= f.label :state %>
+                     <%= f.text_field :state %>
+                     <%= f.label :zipcode %>
+                     <%= f.text_field :zipcode %>
+                     <%= f.label :phone %>
+                     <%= f.text_field :phone %>
+                     <%= f.label :email %>
+                     <%= f.text_field :email %><br />
+                     <%= f.file_field :image %><br />
+                     <%= f.submit class: "btn span3 btn-realto-form btn-large" %>
+                     <% end %>
+
+              </div>
+          </div>
+      </div>
+      <!-- .span8 -->
+      <div class="span4 widget">
+          <div class="widget map box-container padding30">
+              <h3 class="widget-title">Get Directions</h3>
+              <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3988.5882340963726!2d103.82407711447696!3d1.4227873989623452!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31da147370451321%3A0xd95fb48be7144ccc!2sKhatib+Camp!5e0!3m2!1sen!2ssg!4v1501049750147" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+              <dl class="margin0">
+                  <dt>Realto</dt>
+                  <dd class="margin0">16 Yishun Avenue</dd>
+                  <dd class="margin0">Short Beach, FL 33139</dd>
+              </dl>
+          </div>
+      </div>
+      <!-- .span4 -->
+  </div>
+  <!-- .row -->
+</div>
+<!-- .container -->
