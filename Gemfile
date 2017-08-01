@@ -25,8 +25,12 @@ gem 'coffee-rails', '~> 4.2'
 gem 'turbolinks', '~> 5'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.5'
-
+# Authenticate users
 gem 'devise'
+# Star ratings
+gem 'ratyrate'
+# Bootstrap
+gem 'bootstrap', '~> 4.0.0.alpha6'
 
 gem 'geocoder'
 

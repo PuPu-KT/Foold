@@ -13,3 +13,19 @@
  *= require_tree .
  *= require_self
  */
+
+@import url('https://fonts.googleapis.com/css?family=Pacifico');
+@import "bootstrap";
+
+.logo-text {
+  font-family: 'Pacifico', cursive;
+  font-size: 20px;
+}
+
+container {
+  margin-bottom: 10px;
+}
+
+/*h2 {
+  font-family: 'Pacifico', cursive;
+}*/

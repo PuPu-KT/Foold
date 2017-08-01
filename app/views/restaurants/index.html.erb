@@ -1,180 +1,20 @@
 <div id="home-search-container">
-  <div class="container">
-      <div class="row">
-          <div class="span12">
-              <div class="widget pull-right">
-                  <div class="row">
-                  	<div class="span12 head-container">
-                  		<div class="row">
-                          <div class="span8 hidden-phone">
-                              <h2 class="head-title">Welcome to FOOLD </h2>
-                              <p class="head-message"><strong>Best restaurant reviews.</strong><br />
-                              No more bad restaurants again!! </p>
-                              <%= link_to "Write a Review", new_restaurant_path,class: "btn btn-large btn-realto span3 header-cta" %>
-                          </div>
-                          <div class="span4" style="padding-bottom: 150px;">
-                              <div class="search-form">
-                                  <p>Find a great Restaurant !!</p>
-                                <%= form_tag search_restaurants_path, method: :get do |f| %>
-                                <%= text_field_tag :search, nil, placeholder:"Good food, Great Ambience, etc!" %>
-                                <%= text_field_tag :location, nil, placeholder:"East Coast, 848 Khatib, etc!" %>
-                                <%= select_tag :category, options_for_select(Category.all.map{ |c| [c.name, c.id]}) %>
-                                <%= submit_tag 'Search', class: "btn span2 btn-realto-form btn-large" %>
-                                <% end %>
-                              </div>
-                              <!-- .search-form -->
-                          </div>
-                          <!-- .span4 -->
-                      </div>
-                  </div>
-                  </div>
-                  <!-- .row -->
-              </div>
-              <!-- .search-holder -->
-          </div>
-          <!-- .span12 -->
-      </div>
-      <!-- .row -->
-  </div>
-  <!-- .container -->
-</div>
-<div id="latest-properties">
-<div class="container">
-	<div class="row">
-		<div class="span12">
-			<h2 class="secion-title">Restaurants</h2>
-		</div>
-	</div>
-
-	<!-- Begin Carousel -->
-	<div class="row">
-	    <div id="realto-carousel" class="carousel slide span12">
-		    <div class="carousel-navigation pull-right">
-
-          <%= link_to "View all", search_restaurants_path, class: "serif italic pull-left view-all-carousel" %>
-		    	<a class="left carousel-control pull-left" href="#realto-carousel" data-slide="prev">‹</a>
-		    	<a class="right carousel-control pull-right" href="#realto-carousel" data-slide="next">›</a>
-		    </div>
-	        <div class="carousel-inner">
-	          	<div class="item active">
-	                <ul class="thumbnails">
-                    <% @restaurants.last(3).each do |restaurant| %>
-	                    <li class="span4 box-container">
-	                    	<div class="holder">
-	                            <a class="overlay" title="property title" href="#">
-	                            	<span class="more"></span>
-	                            	<%= link_to image_tag("http://placehold.it/370x210"), restaurant %>
-	                            </a>
-                                <% if restaurant.reviews.present? %>
-                                  <span class="prop-tag star-rating" data-score=<%= restaurant.reviews.average(:rating).round(2) %>
-                                    ></span>
-                                <% else %>
-	                                <span class="prop-tag">No reviews yet!</span>
-                                <% end %>
-	                            <div class="prop-info">
-	                                <h3 class="prop-title"><%= link_to restaurant.name, restaurant %></h3>
-	                                <ul class="more-info clearfix">
-	                                    <li class="info-label clearfix"><span class="pull-left">Location:</span> <span class="qty pull-right"><%= restaurant.city %>, <%= restaurant.state %></span></li>
-	                                    <li class="info-label clearfix"><span class="pull-left">Category:</span> <span class="qty pull-right"><%= restaurant.category.name %></span></li>
-	                                </ul>
-	                            </div>
-	                        </div>
-	                    </li>
-                      <% end %>
-	                </ul>
-	          	</div><!-- .item -->
-	          	<div class="item">
-	          	  <ul class="thumbnails">
-                  <% @restaurants.order(:id).reverse_order.limit(3).offset(3).each do |restaurant| %>
-	          	      <li class="span4 box-container">
-	          	      	<div class="holder">
-	          	              <a class="overlay" title="property title" href="#">
-	          	              	<span class="more"></span>
-	          	              	<%= link_to image_tag("http://placehold.it/370x210"), restaurant %>
-	          	              </a>
-	          	              <span class="prop-tag">For Rent</span>
-	          	              <div class="prop-info">
-	          	                  <h3 class="prop-title"><%= link_to restaurant.name, restaurant %></h3>
-	          	                  <ul class="more-info clearfix">
-                                  <li class="info-label clearfix"><span class="pull-left">Location:</span> <span class="qty pull-right"><%= restaurant.city %>, <%= restaurant.state %></span></li>
-                                  <li class="info-label clearfix"><span class="pull-left">Category:</span> <span class="qty pull-right"><% restaurant.category.name %></span></li>
-                              </ul>
-	          	              </div>
-	          	          </div>
-	          	      </li>
-                  <% end %>
-	          	  </ul>
-	          	</div><!-- .item -->
-
-	        </div><!-- .carousel-inner -->
-	    </div>
-	</div><!--End Carousel-->
-
-</div><!-- .container  -->
-</div><!-- #latest-properties  -->
-
-
-<!-- #latest-properties  -->
-<div class="container">
   <div class="row">
-      <div class="home-bottom-top">
-          <div class="span4">
-              <div class="info-box">
-                  <h2 class="secion-title">Japanese</h2>
-                  <% @japanese_restaurants.limit(3).each do |restaurant| %>
-                  <ul class="more-info clearfix">
-                    <li class="info-label clearfix"><%= link_to restaurant.name, restaurant %>
-                    <% if restaurant.reviews.present? %>
-                     <span class="qty pull-right star-rating" data-score=<%= restaurant.reviews.average(:rating).round(2) %>
-                       ></span>
-                         <% else %>
-                         <span class="qty pull-right">No reviews yet!! </span>
-                         <% end %>
-                          </li>
-                      </ul>
-                     <% end %>
-                  <%= link_to "Continue &raquo".html_safe, japanese_path %>
-              </div>
-          </div>
-          <!-- .span4 -->
-          <div class="span4">
-              <div class="info-box">
-                  <h2 class="secion-title">Korean</h2>
-                  <% @korean_restaurants.limit(3).each do |restaurant| %>
-                  <ul class="more-info clearfix">
-                    <li class="info-label clearfix"><%= link_to restaurant.name, restaurant %>
-                    <% if restaurant.reviews.present? %>
-                     <span class="qty pull-right star-rating" data-score=<%= restaurant.reviews.average(:rating).round(2) %>
-                       ></span>
-                         <% else %>
-                         <span class="qty pull-right">No reviews yet!! </span>
-                         <% end %>
-                        </li>
-                      </ul>
-                     <% end %>
-                  <%= link_to "Continue &raquo".html_safe, korean_path %>
-              </div>
-          </div>
-          <!-- .span4 -->
-          <div class="span4">
-              <div class="info-box">
-                  <h2 class="secion-title">Muslim</h2>
-                  <% @muslim_restaurants.limit(3).each do |restaurant| %>
-                  <ul class="more-info clearfix">
-                    <li class="info-label clearfix"><%= link_to restaurant.name, restaurant %>
-                    <% if restaurant.reviews.present? %>
-                     <span class="qty pull-right star-rating" data-score=<%= restaurant.reviews.average(:rating).round(2) %>
-                       ></span>
-                         <% else %>
-                         <span class="qty pull-right">No reviews yet!! </span>
-                         <% end %>
-                        </li>
-                      </ul>
-                     <% end %>
-                  <%= link_to "Continue &raquo".html_safe, muslim_path %>
-              </div>
-          </div>
-          <!-- .span4 -->
-      </div>
+        <div class="span8">
+            <h1 class="head-title">Welcome to FOOLD </h2>
+            <p class="head-message"><strong>Best restaurant reviews.</strong>
+              <br />Everyone's a critic. </p>
+        </div>
+        <div class="span4" style="padding-bottom: 150px;">
+            <div class="search-form">
+                <p>Find a great Restaurant !!</p>
+                <!-- <%= form_tag search_restaurants_path, method: :get do |r| %> -->
+                <!-- <%= text_field_tag :search, nil, placeholder:"Good food, Great Ambience, etc!" %>
+                <%= text_field_tag :location, nil, placeholder:"East Coast, 848 Khatib, etc!" %> -->
+                <%= select_tag :restaurants, options_for_select(@restaurants.all.map{ |r| [r.name, "/restaurants/"+r.id.to_s]}), class: "selectRest", onclick: "location = this.value;"%>
+                <!-- <%= submit_tag 'Search', class: "btn span2 btn-realto-form btn-large" %> -->
+                <!-- <% end %> -->
+            </div>
+        </div>
   </div>
 </div>

@@ -11,28 +11,20 @@
 
     <div class="container">
     <% flash.each do |key, value| %>
-  <div class="alert alert-<%= key %>">
-    <a href="#" data-dismiss="alert" class="close">×</a>
-    <ul>
-      <li>
-        <%= value %>
-      </li>
-    </ul>
-  </div>
-<% end %>
-</div>
+    <div class="alert alert-<%= key %>">
+      <a href="#" data-dismiss="alert" class="close">×</a>
+        <ul>
+          <li>
+            <%= value %>
+          </li>
+        </ul>
+      </div>
+    <% end %>
+    </div>
 
     <%= yield %>
-    <%= render 'layouts/footer' %>
-    <script>
-     $('.star-rating').raty({
-       path: '/assets',
-       readOnly: true,
-       score: function () {
-         return $(this).attr('data-score');
-       }
-     }); // star rating from jquery raty ,wdi10 kent & Tiff
-     </script>
+
+     <%= render 'layouts/footer' %>
   </body>
 </html>
 
