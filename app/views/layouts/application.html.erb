@@ -25,13 +25,15 @@
     <%= yield %>
     <%= render 'layouts/footer' %>
     <script>
+    $(document).ready(function() {
      $('.star-rating').raty({
        path: '/assets',
        readOnly: true,
        score: function () {
          return $(this).attr('data-score');
        }
-     }); // star rating from jquery raty ,wdi10 kent & Tiff
+     })
+   }; // star rating from jquery raty ,wdi10 kent & Tiff
      </script>
   </body>
 </html>

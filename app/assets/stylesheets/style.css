@@ -3,6 +3,10 @@
 /* ==========================================================
 ! General
 ========================================================== */
+.span8 {
+	margin-left: 10%
+}
+
 body {
 	background: #f7f7f7;
 	color: #888;
@@ -132,7 +136,7 @@ iframe {
 .margin300 {
 	margin: 30px 0;
 }
-.page-title, 
+.page-title,
 .post-title,
 .secion-title,
 .info-head,
@@ -185,7 +189,7 @@ a.brand {
 	background: #353535;
 	border: none;
 }
-.navbar-fixed-top .navbar-inner, 
+.navbar-fixed-top .navbar-inner,
 .navbar-static-top .navbar-inner {
 	box-shadow: none;
 }
@@ -232,11 +236,7 @@ a.brand {
 .navbar .nav > li > .dropdown-menu:before {
 	display: none;
 }
-.phone-number {
-	font-size: 18px;
-	font-weight: normal;
-	text-transform: none;
-}
+
 .head-title, .head-message {
 	margin: 0;
 	padding: 10px 60px 10px 10px;
@@ -301,22 +301,7 @@ a.brand {
     position: absolute;
     top: 0;
 }
-.more-info {
-	padding: 0;
-	margin: 0;
-	list-style: none;
-}
-.more-info > li {
-	border-bottom: 1px dashed #E9E9E9;
-    padding: 5px 0;	
-}
-.more-info .info-label {
-    font-weight: bold;
-    color: #363636;
-}
-.more-info .qty {
-    font-weight: normal;
-}
+
 a.overlay {
 	position: relative;
 	display: block;
@@ -440,41 +425,7 @@ a.overlay:hover .more {
 select {
 	min-height: auto !important;
 }
-/* ==========================================================
-! Homepage Carousel
-========================================================== */
-#realto-carousel {
-	position: relative;
-}
-#latest-properties {
-	margin-top: 30px;
-}
-.carousel-control {
-	z-index: 999;
-	background: #363636;
-	border-radius: 0;
-	font-size: 20px;
-	line-height: 20px;
-	border: none;
-	height: 23px;
-	width: 23px;
-	top: -20px;
-	position: relative;
-	color: #fff !important;
-	cursor: pointer;
-}
-.left.carousel-control {
-	left: auto;
-	margin: -20px 5px 0;
-}
-.right.carousel-control {
-	right: 0;
-}
-.view-all-carousel {
-	left: -10px;
-    position: relative;
-    top: -35px;
-}
+
 /* ==========================================================
 ! Info Box Container
 ========================================================== */
@@ -634,7 +585,7 @@ ul.media-list li.media div.comment-holder {
 	color: #363636;
 	border: none;
 }
-.nav-tabs > .active > a, 
+.nav-tabs > .active > a,
 .nav-tabs > .active > a:hover,
 .nav-tabs {
 	border: none;
@@ -773,13 +724,13 @@ h2.post-title {
 @media (min-width: 768px) and (max-width: 979px) {
 	.agent-box.widget h3, .agent-box.widget ul {
 	    margin: 30px 0 0;
-	}	
+	}
 	.nav-collapse .open > .dropdown-menu,
 	.nav-collapse .dropdown-menu {
 		margin: 0;
 		background: #fff;
 	}
-	.nav-collapse .nav > li > a, 
+	.nav-collapse .nav > li > a,
 	.nav-collapse .dropdown-menu a {
 		border-radius: 0;
 		border-right: none;
@@ -805,7 +756,7 @@ h2.post-title {
 /* ==========================================================
 ! Landscape phone to portrait tablet
 ========================================================== */
-@media (max-width: 767px) { 
+@media (max-width: 767px) {
 	header {
 		margin-left: -20px;
 		margin-right: -20px;
@@ -861,7 +812,7 @@ h2.post-title {
 	.dropdown.open .dropdown-menu {
 		background: #FFF;
 	}
-	.nav-collapse .nav > li > a, 
+	.nav-collapse .nav > li > a,
 	.nav-collapse .dropdown-menu a {
 		border-radius: 0;
 		border-right: none;
@@ -884,5 +835,5 @@ h2.post-title {
 	.agent-box.widget h3, .agent-box.widget ul {
 	    margin: 30px 0 0;
 	}
-		
+
 }
