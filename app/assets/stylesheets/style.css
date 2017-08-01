@@ -604,45 +604,23 @@ ul.media-list li.media div.comment-holder {
 ! Footer
 ========================================================== */
 footer {
+	position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
 	background: #3a3a3a;
-	margin: 30px 0 0;
-	padding: 0 0 30px;
 	color: #aaa;
 }
+
 footer a {
 	color: #aaa;
 }
-.footer-widget {
-	margin: 30px 0 0;
+
+footer h3 {
+	color: #F0FFFF
 }
-.footer-widget ul {
-	list-style: none;
-	padding: 0;
-	margin: 0;
-}
-.footer-widget ul li.clearfix i {
-	margin: 5px 10px 0 0;
-}
-.footer-widget h2 {
-	font-size: 28px;
-    font-weight: bold;
-    margin: 0 0 10px;
-    color: #fff;
-}
-.footer-widget h3 {
-	color: #fff;
-	margin: 0 0 20px;
-	padding: 0 0 20px;
-	border-bottom: 1px solid #5a5a5a;
-}
-.footer-tag-line {
-	font-size: 12px;
-	text-transform: uppercase;
-	color: #fff;
-}
-.flickr-widget li {
-	margin: 0 10px 10px 0;
-}
+
+
 /* ==========================================================
 ! Properties Slideshow
 ========================================================== */

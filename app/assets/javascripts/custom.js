@@ -1,9 +1,13 @@
 //placeholder
 $(document).ready(function() {
-	function selectRestaurant() {
-		console.log($('.selectRest').val);
 
-	}()
+	$('.star-rating').raty({
+		path: '/assets',
+		readOnly: true,
+		score: function () {
+			return $(this).attr('data-score');
+		}
+	})
 
 });
 // //Homepage Carousel

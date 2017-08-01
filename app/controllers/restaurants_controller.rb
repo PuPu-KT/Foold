@@ -11,7 +11,8 @@ class RestaurantsController < ApplicationController
     visitor_longitude = 103.8354
 
 
-    @restaurants = Restaurant.near([visitor_latitude, visitor_longitude], 20)
+    @restaurants = Restaurant.all
+    # near([visitor_latitude, visitor_longitude], 20)
     @japanese_restaurants = Restaurant.where(category_id: 2).near([visitor_latitude, visitor_longitude], 20)
     @korean_restaurants = Restaurant.where(category_id: 5).near([visitor_latitude, visitor_longitude], 20)
     @muslim_restaurants = Restaurant.where(category_id: 4).near([visitor_latitude, visitor_longitude], 20)
