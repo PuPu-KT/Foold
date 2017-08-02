@@ -1,27 +1,54 @@
 <!-- Show One Restaurant -->
-<div class="wrapper">
   <div id="container">
-      <div class="row">
-        <div class="col-xs-12">
-          <p>
-            <%= @restaurant.name %>
-          </p>
-          <p>
-            <%= image_tag(@restaurant.image) %>
-          </p>
-          <p>
-            <%= @restaurant.description %>
-          </p>
-          <p>
-            <%= @restaurant.address1 %>
-          </p>
-          <p>
-            <%= @restaurant.address2 %>
-          </p>
-          <p>
-            <%= @restaurant.city %>
-          </p>
+      <div class="restaurant-bubble">
+        <p>
+          <%= @restaurant.name %>
+        </p>
+        <div>
+          <%= image_tag(@restaurant.image) %>
         </div>
+
+
+        <p>
+          <%= @restaurant.description %>
+        </p>
+        <p>
+          <%= @restaurant.address1 %>
+        </p>
+        <p>
+          <%= @restaurant.address2 %>
+        </p>
+        <p>
+          <%= @restaurant.city %>
+        </p>
+      </div>
+
+        <% if @reviews %>
+          <div>
+            <% @reviews.each do |x| %>
+
+            <div class="review-bubble">
+              <p>
+                <!-- Trying to pull reviewer's name -->
+                <%= x.user.first_name+" "+x.user.last_name %>
+                says:
+              </p>
+
+              <p>
+                <!-- Text comment -->
+                <%= '"'+x.comment+'"' %>
+              </p>
+
+              <p>
+                <!-- Star rating -->
+                <%= x.rating %>/5
+              </p>
+
+            </div>
+
+          </div>
+        <% end %>
+        <% end %>
 
         <!-- Admin edit rights here -->
         <div class="col-xs-12">
@@ -38,11 +65,10 @@
           <%if user_signed_in? %>
           <%= link_to "Write a Review", new_restaurant_review_path(@restaurant, @reviews), class: "btn btn-large btn-realto header-cta" %>
           <%else%>
-          <%= link_to "Sign in to Review", new_user_session_path %>
+          <%= link_to "Sign in to Review", new_user_session_path, class: "btn btn-large btn-realto header-cta" %>
           <%end%>
         </div>
-      </div>
   </div>
-</div>
+
 
 <!-- restaurant container end -->

@@ -8,12 +8,7 @@
         <div class="span4" style="padding-bottom: 150px;">
             <div class="search-form">
                 <p>Find a great Restaurant !!</p>
-                <!-- <%= form_tag search_restaurants_path, method: :get do |r| %> -->
-                <!-- <%= text_field_tag :search, nil, placeholder:"Good food, Great Ambience, etc!" %>
-                <%= text_field_tag :location, nil, placeholder:"East Coast, 848 Khatib, etc!" %> -->
                 <%= select_tag :restaurants, options_for_select(@restaurants.all.map{ |r| [r.name, "/restaurants/"+r.id.to_s]}), class: "selectRest", onclick: "location = this.value;"%>
-                <!-- <%= submit_tag 'Search', class: "btn span2 btn-realto-form btn-large" %> -->
-                <!-- <% end %> -->
             </div>
         </div>
   </div>
