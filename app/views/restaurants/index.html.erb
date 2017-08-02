@@ -1,14 +1,23 @@
+
 <div id="home-search-container">
   <div class="row">
+
+          <% flash.each do |key, value| %>
+          <div class="alert alert-<%= key %>">
+            <a href="#" data-dismiss="alert" class="close">×</a>
+                  <%= value %>
+            </div>
+          <% end %>
+
         <div class="span8">
-            <h1 class="head-title">Welcome to FOOLD </h2>
-            <p class="head-message"><strong>Best restaurant reviews.</strong>
-              <br />Everyone's a critic. </p>
+            <h1 class="head-title">DPR </h2>
+            <p class="head-message"><strong><i>Damn power, lah.</i></strong>
+              <br />Because Singaporeans like to complain. </p>
         </div>
         <div class="span4" style="padding-bottom: 150px;">
             <div class="search-form">
                 <p>Find a great Restaurant !!</p>
-                <%= select_tag :restaurants, options_for_select(@restaurants.all.map{ |r| [r.name, "/restaurants/"+r.id.to_s]}), class: "selectRest", onclick: "location = this.value;"%>
+                <%= select_tag :restaurants, options_for_select(@restaurants.all.map{ |r| [r.name, "/restaurants/"+r.id.to_s]}), :include_blank => true, class: "selectRest", onchange: "location = this.value;"%>
             </div>
         </div>
   </div>

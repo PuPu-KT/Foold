@@ -1,74 +1,67 @@
 <!-- Show One Restaurant -->
-  <div id="container">
-      <div class="restaurant-bubble">
-        <p>
-          <%= @restaurant.name %>
-        </p>
-        <div>
-          <%= image_tag(@restaurant.image) %>
-        </div>
+<div class="restaurant-container">
+<div class="card restaurant">
+   <%= image_tag(@restaurant.image) %>
+   <div class="avatar">
+      Average Rating: /5
+   </div>
 
-
-        <p>
-          <%= @restaurant.description %>
-        </p>
-        <p>
-          <%= @restaurant.address1 %>
-        </p>
-        <p>
-          <%= @restaurant.address2 %>
-        </p>
-        <p>
-          <%= @restaurant.city %>
-        </p>
+   <!-- Restaurant info here -->
+   <div class="info">
+      <div class="title">
+         <%= @restaurant.name %>
+      </div>
+      <div class="address">
+        <%= @restaurant.address1 %>
+        <br />
+        <%= @restaurant.address2 %>
+        <br />
+        <%= @restaurant.city+"," %> <%= @restaurant.state %>
+        <br />
+        <%= @restaurant.zipcode %>
+        <br />
+        <%= @restaurant.phone %>
       </div>
 
-        <% if @reviews %>
-          <div>
-            <% @reviews.each do |x| %>
 
-            <div class="review-bubble">
-              <p>
-                <!-- Trying to pull reviewer's name -->
-                <%= x.user.first_name+" "+x.user.last_name %>
-                says:
-              </p>
+       <% if !user_signed_in? %>
+       <%= link_to "Sign in to Review", new_user_session_path, class: "button" %>
+       <% elsif current_user.try(:admin?) %>
+       <%= link_to 'Edit', edit_restaurant_path(@restaurant) %>
+       <% else user_signed_in? && !current_user.try(:admin?) %>
+       <%= link_to "Write a Review", new_restaurant_review_path(@restaurant, @reviews) %>
+       <%end%>
 
-              <p>
-                <!-- Text comment -->
-                <%= '"'+x.comment+'"' %>
-              </p>
+</div>
+</div>
 
-              <p>
-                <!-- Star rating -->
-                <%= x.rating %>/5
-              </p>
+    <% if @reviews %>
+      <div>
+        <% @reviews.each do |x| %>
 
-            </div>
-
-          </div>
-        <% end %>
-        <% end %>
-
-        <!-- Admin edit rights here -->
-        <div class="col-xs-12">
+        <div class="review-bubble">
           <p>
-            <%if current_user.try(:admin?) %>
-            <%= link_to 'Edit', edit_restaurant_path(@restaurant) %> |
-            <%= link_to 'Back', restaurants_path %>
-            <%end%>
+            <!-- Trying to pull reviewer's name -->
+            <%= x.user.first_name+" "+x.user.last_name %>
+            says:
           </p>
+
+          <p>
+            <!-- Text comment -->
+            <%= '"'+x.comment+'"' %>
+          </p>
+
+          <p>
+            <!-- Star rating -->
+            <%= x.rating %>/5
+          </p>
+
         </div>
 
-      <!-- Write a Review -->
-        <div class="col-xs-12">
-          <%if user_signed_in? %>
-          <%= link_to "Write a Review", new_restaurant_review_path(@restaurant, @reviews), class: "btn btn-large btn-realto header-cta" %>
-          <%else%>
-          <%= link_to "Sign in to Review", new_user_session_path, class: "btn btn-large btn-realto header-cta" %>
-          <%end%>
-        </div>
-  </div>
+      </div>
+    <% end %>
+    <% end %>
 
+</div>
 
 <!-- restaurant container end -->

@@ -11,7 +11,7 @@ class RestaurantsController < ApplicationController
     visitor_longitude = 103.8354
 
 
-    @restaurants = Restaurant.all
+    @restaurants = Restaurant.all.order(:name)
     # near([visitor_latitude, visitor_longitude], 20)
     @japanese_restaurants = Restaurant.where(category_id: 2).near([visitor_latitude, visitor_longitude], 20)
     @korean_restaurants = Restaurant.where(category_id: 5).near([visitor_latitude, visitor_longitude], 20)
@@ -77,5 +77,10 @@ def show
            flash[:danger] = "Oops! Did you try to access a secret page?"
            redirect_to '/'
          end
+      end
+
+      # Check for collision with other reviews
+      def collides_with(review)
+      ((@review + @review.width >= player.x) && (@x <= player.x + player.image.width)) && ((@y + @image.height >= player.y) && (@y <= player.y + player.image.height))
       end
 end

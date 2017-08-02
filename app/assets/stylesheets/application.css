@@ -14,16 +14,28 @@
  *= require_self
  */
 
-@import url('https://fonts.googleapis.com/css?family=Pacifico');
+@import url('https://fonts.googleapis.com/css?family=Zilla+Slab+Highlight');
 @import "bootstrap";
 
 .logo-text {
-  font-family: 'Pacifico', cursive;
+  font-family: 'Zilla Slab Highlight', cursive;
   font-size: 20px;
 }
 
 container {
   margin-bottom: 10px;
+}
+
+html,body {
+  position:relative;
+  margin:0;
+  padding:0;
+  overflow:auto;
+}
+
+body {
+  height: 100vh;
+  overflow: scroll;
 }
 
 /*h2 {

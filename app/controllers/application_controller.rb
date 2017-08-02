@@ -12,4 +12,13 @@ class ApplicationController < ActionController::Base
   end
   # solution given by (see below) -- Kenny
 #https://stackoverflow.com/questions/37341967/rails-5-undefined-method-for-for-devise-on-line-devise-parameter-sanitizer
+  def store_location
+    session[:return_to] = if request.get?
+      request.request_uri
+    else
+      request.referer
+    end
+  end
+
+
 end

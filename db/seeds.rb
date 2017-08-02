@@ -6,40 +6,7 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-
-chinese = Category.where(name: "Chinese").first_or_create(name: "Chinese")
-european = Category.where(name: "European").first_or_create(name: "European")
-indian = Category.where(name: "Indian").first_or_create(name: "Indian")
-japanese = Category.where(name: "Japanese").first_or_create(name: "Japanese")
-korean = Category.where(name: "Korean").first_or_create(name: "Korean")
-muslim = Category.where(name: "Muslim").first_or_create(name: "Muslim")
-
-Restaurant.where(name: "Chatterbox").first_or_create(name: "Chatterbox", description: "chicken rice", city: "Orchard", state:"Singapore", category_id: chinese.id)
-Restaurant.where(name: "Taco Bell").first_or_create(name: "Taco Bell", description: "tacos", city: "Yishun", state:"Singapore", category_id: chinese.id)
-Restaurant.where(name: "Taco Bell").first_or_create(name: "Taco Bell", description: "tacos", city: "Yishun", state:"Singapore", category_id: chinese.id)
-Restaurant.where(name: "Taco Bell").first_or_create(name: "Taco Bell", description: "tacos", city: "Yishun", state:"Singapore", category_id: chinese.id)
-
-Restaurant.where(name: "Kentucky Fried Chicken").first_or_create(name: "Kentucky Fried Chicken", description: "fried chicken", city: "Bedok", state:"Singapore", category_id: european.id)
-Restaurant.where(name: "Macdonald's").first_or_create(name: "Macdonald's", description: "burgers", city: "East Coast", state:"Singapore", category_id: european.id)
-Restaurant.where(name: "Subway").first_or_create(name: "Subway", description: "sandwiches", city: "Jurong East", state:"Singapore", category_id: european.id)
-Restaurant.where(name: "Arnold fried chicken").first_or_create(name: "Arnold fried chicken", description: "fried chicken", city: "Yishun", state:"Singapore", category_id: european.id)
-
-Restaurant.where(name: "Taco Bell").first_or_create(name: "Taco Bell", description: "tacos", city: "Yishun", state:"Singapore", category_id: indian.id)
-Restaurant.where(name: "Taco Bell").first_or_create(name: "Taco Bell", description: "tacos", city: "Yishun", state:"Singapore", category_id: indian.id)
-Restaurant.where(name: "Taco Bell").first_or_create(name: "Taco Bell", description: "tacos", city: "Yishun", state:"Singapore", category_id: indian.id)
-Restaurant.where(name: "Taco Bell").first_or_create(name: "Taco Bell", description: "tacos", city: "Yishun", state:"Singapore", category_id: indian.id)
-
-Restaurant.where(name: "The Sushi Bar").first_or_create(name: "The Sushi Bar", description: "sushi", city: "Orchard", state:"Singapore", category_id: japanese.id)
-Restaurant.where(name: "Mos Burgers").first_or_create(name: "Mos Burgers", description: "burgers", city: "Orchard", state:"Singapore", category_id: japanese.id)
-Restaurant.where(name: "Ichiban Boshi").first_or_create(name: "Ichiban Boshi", description: "japanese food", city: "East Coast", state:"Singapore", category_id: japanese.id)
-Restaurant.where(name: "Kotobuki Restaurant").first_or_create(name: "Kotobuki Restaurant", description: "japanese food", city: "East Coast", state:"Singapore", category_id: japanese.id)
-
-Restaurant.where(name: "Ju Shin Jung Korean Restaurant").first_or_create(name: "Ju Shin Jung Korean Restaurant", description: "korean food", city: "East Coast", state:"Singapore", category_id: korean.id)
-Restaurant.where(name: "Yong Kin Wah").first_or_create(name: "Yong Kin Wah", description: "korean food", city: "Bedok", state:"Singapore", category_id: korean.id)
-Restaurant.where(name: "Oppa BBQ").first_or_create(name: "Oppa BBQ", description: "korean food", city: "Jurong East", state:"Singapore", category_id: korean.id)
-Restaurant.where(name: "Seoul Garden").first_or_create(name: "Seoul Garden", description: "korean food", city: "Yishun", state:"Singapore", category_id: korean.id)
-
-Restaurant.where(name: "Taco Bell").first_or_create(name: "Taco Bell", description: "tacos", city: "Yishun", state:"Singapore", category_id: muslim.id)
-Restaurant.where(name: "Taco Bell").first_or_create(name: "Taco Bell", description: "tacos", city: "Yishun", state:"Singapore", category_id: muslim.id)
-Restaurant.where(name: "Taco Bell").first_or_create(name: "Taco Bell", description: "tacos", city: "Yishun", state:"Singapore", category_id: muslim.id)
-Restaurant.where(name: "Taco Bell").first_or_create(name: "Taco Bell", description: "tacos", city: "Yishun", state:"Singapore", category_id: muslim.id)
+Restaurant.where(name: 'Cheek By Jowl').first_or_create(name: 'Cheek By Jowl', address1: '21 Boon Tat St', city: 'Singapore', state: 'Singapore', zipcode: '069620', phone: '(65)6221 1911', latitude: '1.281301', longitude: '103.848486', image: 'http://res.cloudinary.com/dk2c1re0u/image/upload/v1501128532/restaurant_cheekbyjowl_p6cw6r.png')
+Restaurant.where(name: 'Adrift by David Myers').first_or_create(name: 'Adrift by David Myers', address1: '10 Bayfront Avenue', address2: 'Hotel Lobby Tower 2, MBS', city: 'Singapore', state: 'Singapore', zipcode: '018956', phone: '(65)6688 5657', latitude: '1.2833661', longitude: '103.8606815', image: 'http://res.cloudinary.com/dk2c1re0u/image/upload/v1501653228/restaurant_adrift_qfxued.png')
+Restaurant.where(name: 'Akira Back Singapore').first_or_create(name: 'Akira Back Singapore', address1: '30 Beach Road', address2: 'JW Marriott Hotel', city: 'Singapore', state: 'Singapore', zipcode: '189763', phone: '(65)6818 1914', latitude: '1.2945209', longitude: '103.8559817', image: 'http://res.cloudinary.com/dk2c1re0u/image/upload/v1501653397/restaurant_akiraback_r9ri35.png')
+Restaurant.where(name: 'Bam! Tapas Sake Bar').first_or_create(name: 'Bam! Tapas Sake Bar', address1: '38 Tras St', city: 'Singapore', state: 'Singapore', zipcode: '078977', phone: '(65)6226 0500', latitude: '1.2784306', longitude: '103.8443293', image: 'http://res.cloudinary.com/dk2c1re0u/image/upload/v1501653426/restaurant_bam_ijuwkt.png')
