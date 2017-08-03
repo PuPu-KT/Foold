@@ -35,6 +35,7 @@ class RestaurantsController < ApplicationController
 def show
     @restaurant = Restaurant.find(params[:id])
     @reviews = Review.where(restaurant_id: @restaurant)
+    @avg = 0
     if @reviews.blank?
       @avg_rating = 0
     else

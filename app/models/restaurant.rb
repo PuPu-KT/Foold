@@ -10,6 +10,8 @@ class Restaurant < ActiveRecord::Base
   geocoded_by :full_address
   after_validation :geocode
 
+  ratyrate_rateable "rating"
+
   # mount_uploader :image, ImageUploader
 
   def full_address

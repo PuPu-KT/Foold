@@ -3,7 +3,27 @@
 <div class="card restaurant">
    <%= image_tag(@restaurant.image) %>
    <div class="avatar">
-      Average Rating: /5
+      Average Rating:
+      <% if @reviews %>
+          <% @reviews.each do |x| %>
+          <% @avg += x.rating %>
+          <% end %>
+          <% if @reviews.length != 0 %>
+          <% @avg = @avg/ @reviews.length %>
+          <% end %>
+      <% end %>
+
+      <%=@avg %>/5
+      <div>
+      <% 5.times do |i| %>
+      <% p @avg, i %>
+          <%if (@avg > i) %>
+          <span class="glyphicon glyphicon-star" style="color:yellow"></span>
+          <% else %>
+          <span class="glyphicon glyphicon-star"></span>
+          <% end%>
+        <% end %>
+      </div>
    </div>
 
    <!-- Restaurant info here -->

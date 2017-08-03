@@ -15,4 +15,6 @@
 //= require turbolinks
 //= require custom.js
 //= require_tree .
+//= require jquery.raty
+//= require ratyrate
 //= require bootstrap
