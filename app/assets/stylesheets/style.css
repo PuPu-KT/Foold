@@ -328,6 +328,8 @@ a.brand {
 	line-height: 44px;
 	font-weight: bold;
 	text-transform: none;
+	color: rgba(192,192,192,0.8);
+	font-family: 'Montserrat Subrayada', sans-serif;
 }
 .head-message {
 	color: #FFF;
@@ -455,7 +457,7 @@ footer h3 {
     line-height: 22px;
     margin: 0 0 20px;
     text-transform: uppercase;
-    color: #44773f
+    color: rgba(0,0,0,1);
 }
 
 .select {

@@ -16,7 +16,7 @@
         </div>
         <div class="span4" style="padding-bottom: 150px;">
             <div class="search-form">
-                <p>Find a great Restaurant !!</p>
+                <p>Find a great Restaurant. Or not.</p>
                 <%= select_tag :restaurants, options_for_select(@restaurants.all.map{ |r| [r.name, "/restaurants/"+r.id.to_s]}), :include_blank => true, class: "selectRest", onchange: "location = this.value;"%>
             </div>
         </div>
