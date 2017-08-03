@@ -84,7 +84,7 @@ restaurants.each do |r|
   )
 end
 
-Restaurant.create(name: 'test')
+# Restaurant.create(name: 'test')
 # Category.create(name: 'western')
 # Restaurant.create(restaurants)
 
