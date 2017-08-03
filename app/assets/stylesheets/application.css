@@ -14,12 +14,12 @@
  *= require_self
  */
 
-@import url('https://fonts.googleapis.com/css?family=Zilla+Slab+Highlight');
+@import url('https://fonts.googleapis.com/css?family=Josefin+Sans|Montserrat+Subrayada');
 @import "bootstrap";
 
 .logo-text {
-  font-family: 'Zilla Slab Highlight', cursive;
-  font-size: 20px;
+  font-family: 'Montserrat Subrayada', sans-serif;
+  font-size: 30px;
 }
 
 container {
@@ -36,6 +36,10 @@ html,body {
 body {
   height: 100vh;
   overflow: scroll;
+}
+
+.span4 {
+  margin-top: 25%;
 }
 
 /*h2 {
