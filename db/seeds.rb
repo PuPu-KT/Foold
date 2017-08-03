@@ -10,7 +10,7 @@ restaurants = [
   {
     name: 'Cheek By Jowl',
     address1: '21 Boon Tat St',
-    address2: 'none'
+    address2: 'none',
     city: 'Singapore',
     state: 'Singapore',
     zipcode: '069620',
