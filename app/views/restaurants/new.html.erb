@@ -8,21 +8,37 @@
                   <%= form_for @restaurant do |f| %>
                      <%= f.label :name %>
                      <%= f.text_field :name, :required => true %>
-                     <%= f.label :address1, :required => true %>
-                     <%= f.text_field :address1 %>
-                     <%= f.label :address2 %>
-                     <%= f.text_field :address2 %>
-                     <%= f.label :city %>
-                     <%= f.text_field :city %>
-                     <%= f.label :state %>
-                     <%= f.text_field :state %>
-                     <%= f.label :zipcode %>
-                     <%= f.text_field :zipcode %>
-                     <%= f.label :phone %>
-                     <%= f.text_field :phone %>
-                     <%= f.label :email %>
-                     <%= f.text_field :email %><br />
-                     <%= f.file_field :image %><br />
+                     <p>
+                       <%= f.label :address1, :required => true %>
+                       <%= f.text_field :address1 %>
+                     </p>
+                     <p>
+                       <%= f.label :address2 %>
+                       <%= f.text_field :address2 %>
+                     </p>
+                     <p>
+                       <%= f.label :city %>
+                       <%= f.text_field :city %>
+                     </p>
+                     <p>
+                       <%= f.label :state %>
+                       <%= f.text_field :state %>
+                     </p>
+                     <p>
+                       <%= f.label :zipcode %>
+                       <%= f.text_field :zipcode %>
+                     </p>
+                     <p>
+                       <%= f.label :phone %>
+                       <%= f.text_field :phone %>
+                     </p>
+                     <p>
+                       <%= f.label :email %>
+                       <%= f.text_field :email %><br />
+                     </p>
+                     <p>
+                       <%= f.file_field :image %><br />
+                     </p>
                      <%= f.submit class: "btn span3 btn-realto-form btn-large" %>
                      <% end %>
 
