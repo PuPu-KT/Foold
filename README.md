@@ -10,7 +10,7 @@ This project uses Ruby only for the project and serves to the front & back-end a
 
  - Kenny Tan
 
- - Tiffany Tan
+ - Tiffany Chew
 
 Site: https://vast-beyond-12558.herokuapp.com/
 
