@@ -10,7 +10,7 @@ restaurants = [
   {
     name: 'Cheek By Jowl',
     address1: '21 Boon Tat St',
-    address2: 'none'
+    address2: 'none',
     city: 'Singapore',
     state: 'Singapore',
     zipcode: '069620',
@@ -84,7 +84,7 @@ restaurants.each do |r|
   )
 end
 
-Restaurant.create(name: 'test')
+# Restaurant.create(name: 'test')
 # Category.create(name: 'western')
 # Restaurant.create(restaurants)
 

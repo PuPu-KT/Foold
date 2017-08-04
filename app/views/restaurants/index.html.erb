@@ -1,15 +1,12 @@
 
 <div id="home-search-container">
   <div class="row">
-
+        <div class="span8">
           <% flash.each do |key, value| %>
           <div class="alert alert-<%= key %>">
-            <a href="#" data-dismiss="alert" class="close">×</a>
                   <%= value %>
             </div>
           <% end %>
-
-        <div class="span8">
             <h1 class="head-title">DPR </h1>
             <p class="head-message"><strong><i>Damn power, lah.</i></strong>
               <br />Because Singaporeans like to complain. </p>
