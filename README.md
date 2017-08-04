@@ -17,7 +17,7 @@ Site: https://vast-beyond-12558.herokuapp.com/
 
 # <h2>Acknowlegment </h2>
 
-Thanks to
+Thanks to ..
 
 --> our Instructors - Iskandar, Gen Sng & Jens Neilsen
 
