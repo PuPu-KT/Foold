@@ -13,7 +13,7 @@ create/edit restaurant do not work!)  ** BASICALLY, IT AN APP THAT CAN BE SUMMED
  - Tiffany
  
 # <h2>Acknowlegment </h2>
-** SAY WHAT?? **
+<h1> SAY WHAT?? </h1>
 
-If you still feel there further need to witness the monstrosity, do click the link below.....
+If you still feel there further need to witness the monstrosity, do click the link .....
 Site: https://vast-beyond-12558.herokuapp.com/
