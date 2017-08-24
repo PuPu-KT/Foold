@@ -4,7 +4,7 @@ Go further if wanna see this one-liner app.
 
 # About / Tech used
 This uses Ruby/Rails only for the project and was built on foundation of another Project i've created earlier called "JAFARR".
-(You basic choose a 'restaurant' on landing page(one even not working!) & can review if sign in. Admin someX do not work. 
+(You basically choose a 'restaurant' on landing page(one even not working!) & can review if sign in. Admin someX do not work. 
 create/edit restaurant do not work!)  ** BASICALLY, IT AN APP THAT CAN BE SUMMED UP IN 2 OR 3 PICS! **
 [I GUESS THIS WILL ENTIRELY BE DELETED ONCE I'VE HV MORE REPOS TO CARE OF...]
 
