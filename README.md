@@ -1,6 +1,6 @@
 # A Project4 that's not meant to be..
-A restaurant review application built by a single effort & another half-axx last-min change by another often-missing member!
-Go further if wanna see this one-liner app.
+A restaurant review application built by a single effort & another half-axx last-min change by another often-missing/irresponsible member!
+Go further if wanna see this one-liner app. (shld hv gone solo!)
 
 # About / Tech used
 This uses Ruby/Rails only for the project and was built on foundation of another Project i've created earlier called "JAFARR".
